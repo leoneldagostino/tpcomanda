@@ -15,6 +15,12 @@ require __DIR__ . '/../vendor/autoload.php';
 require_once './db/AccesoDatos.php';
 // require_once './middlewares/Logger.php';
 
+// llamado de MW
+
+require_once './middlewares/usuarioMiddleware.php';
+
+//llamado modelos
+
 require_once './controllers/UsuarioController.php';
 require_once './controllers/ProductoController.php';
 require_once './controllers/MesaController.php';
@@ -42,7 +48,7 @@ $app->group('/usuarios', function (RouteCollectorProxy $group) {
 
 $app->group('/productos', function (RouteCollectorProxy $group) {
   // $group->get('/{id}', \ProductoController::class . ':TraerUno');
-  $group->get('[/]', \ProductoController::class . ':TraerTodos');
+  $group->get('[/]', \ProductoController::class . ':TraerTodos')->add(new usuarioMiddleware());
   $group->post('[/alta]', \ProductoController::class . ':CargarUno');
   });
 
