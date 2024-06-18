@@ -28,13 +28,18 @@ class ProductoController extends Producto implements IApiUsable
 
     public function TraerUno($request, $response, $args)
     {
-        // Buscamos producto por id
-        // $id = $args['id'];
-        // // $producto = Producto::obtenerProducto($id);
-        // // $payload = json_encode($producto);
+        //Buscamos producto por id
+        $id = $args['id'];
+        $producto = Producto::buscarProductoPorId($id);
+        if(!$producto){
+            $payload = json_encode(array("mensaje" => "Producto no encontrado, ID incorrecto"));
+            $response->getBody()->write($payload);
+            return $response->withHeader('Content-Type', 'application/json');
+        }
+        $payload = json_encode($producto);
 
-        // $response->getBody()->write($payload);
-        // return $response->withHeader('Content-Type', 'application/json');
+        $response->getBody()->write($payload);
+        return $response->withHeader('Content-Type', 'application/json');
     }
 
     public function TraerTodos($request, $response, $args)
@@ -63,7 +68,7 @@ class ProductoController extends Producto implements IApiUsable
     public function BorrarUno($request, $response, $args)
     {
         $id = $args['id'];
-        // Producto::borrarProducto($id);
+        Producto::borrarProducto($id);
 
         $payload = json_encode(array("mensaje" => "Producto eliminado con exito"));
 

@@ -47,7 +47,7 @@ $app->group('/usuarios', function (RouteCollectorProxy $group) {
   });
 
 $app->group('/productos', function (RouteCollectorProxy $group) {
-  // $group->get('/{id}', \ProductoController::class . ':TraerUno');
+  $group->get('/{id}', \ProductoController::class . ':TraerUno');
   $group->get('[/]', \ProductoController::class . ':TraerTodos')->add(new usuarioMiddleware());
   $group->post('[/alta]', \ProductoController::class . ':CargarUno');
   });

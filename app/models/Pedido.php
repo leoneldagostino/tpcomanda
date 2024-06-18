@@ -34,4 +34,54 @@ class Pedido
 
         return $sentencia->fetchAll(PDO::FETCH_CLASS,'Pedido');
     }
+
+    public function modificarPedido($idPedido, $estado)
+    {
+        $idEstado = $this->verificarEstado($estado);
+        if(!$this->verificarPedidoPorId($idPedido) && $idEstado != 0){
+            return 0;
+        }
+        else{
+            
+            $accederDatos = AccesoDatos::obtenerInstancia();
+            $sentencia = $accederDatos->prepararConsulta("UPDATE pedido SET estado = :estado WHERE id = :id");
+            $sentencia->bindValue(':estado', $estado, PDO::PARAM_STR);
+            $sentencia->bindValue(':id', $idPedido, PDO::PARAM_INT);
+
+            return $sentencia->execute();
+        }
+    }
+
+    private function verificarPedidoPorId($id)
+    {
+        $accederDatos = AccesoDatos::obtenerInstancia();
+        $sentencia = $accederDatos->prepararConsulta("SELECT * FROM pedido WHERE id = :id");
+        $sentencia->bindValue(':id', $id, PDO::PARAM_INT);
+        $sentencia->execute();
+        
+        if($sentencia->rowCount() > 0)
+        {
+            return true;
+        }
+        return false;
+        
+    }
+
+    private function verificarEstado($estado)
+    {
+        $accederDatos = AccesoDatos::obtenerInstancia();
+        $sentencia = $accederDatos->prepararConsulta("SELECT id FROM mesa_estado WHERE nombre = :estado");
+        $sentencia->bindValue(':estado',$estado,PDO::PARAM_STR);
+        $sentencia->execute();
+
+        if($sentencia->rowCount() > 0)
+        {
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+            return $resultado['id'];
+        }
+        else {
+            return 0;
+        }
+
+    }
 }

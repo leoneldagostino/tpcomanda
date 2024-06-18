@@ -7,7 +7,6 @@ use Slim\Psr7\Response;
 
 class usuarioMiddleware
 {
-
     public function __invoke(Request $request, RequestHandler $handler): ResponseInterface
     {
         $params = $request->getQueryParams();
@@ -24,3 +23,4 @@ class usuarioMiddleware
         return $response;
     }
 } 
+?>
