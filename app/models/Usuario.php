@@ -32,7 +32,7 @@ class Usuario
     public static function obtenerUsuario($usuario)
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("SELECT id, usuario, clave FROM usuarios WHERE usuario = :usuario");
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT id, usuario, clave, tipo FROM usuario WHERE usuario = :usuario");
         $consulta->bindValue(':usuario', $usuario, PDO::PARAM_STR);
         $consulta->execute();
 
@@ -58,4 +58,38 @@ class Usuario
         $consulta->bindValue(':fechaBaja', date_format($fecha, 'Y-m-d H:i:s'));
         $consulta->execute();
     }
+
+    public static function verificarRolUsuario($usuario, $rolUsuario)
+    {
+        $datosUsuario = Usuario::obtenerUsuario($usuario);
+        
+        if($datosUsuario == null)
+        {
+            return false;
+        }
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("SELECT id FROM tipo_usuario WHERE nombre = :nombre");
+        $consulta->bindValue(':nombre', $rolUsuario, PDO::PARAM_STR);
+        if($consulta->execute())
+        {
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+
+            if($resultado['id'] == $datosUsuario->tipo)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
+
+        
+    }
+
+
+    //TODO IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA LOGEARSE
+
+
 }

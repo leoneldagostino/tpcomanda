@@ -84,4 +84,19 @@ class Pedido
         }
 
     }
+
+    //TODO funcion que verifique el tiempo de preparacion de un producto, y calcular en cuanto tiempo falta para que este listo
+
+    /*
+    en la base de datos se deberia agregar un campo tiempo_preparacion en la tabla producto
+    junto a fecha de creacion y fecha de modificacion
+    se debera tomar el valor de modificacion y sumarle el tiempo de preparacion, y comparar con la fecha al momento de consultar
+    */
+
+    //TODO IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA CAMBIAR EL ESTADO DEL PEDIDO
+    
+    //TODO IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA VER EL ESTADO DE UN PEDIDO
+
+    
+
 }

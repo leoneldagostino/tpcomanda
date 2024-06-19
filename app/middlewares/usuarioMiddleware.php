@@ -10,12 +10,17 @@ class usuarioMiddleware
     public function __invoke(Request $request, RequestHandler $handler): ResponseInterface
     {
         $params = $request->getQueryParams();
-        if (isset($params['usuario'])){
+        $nombreUsuario = $params['usuario'];
+        $metodo = $request->getUri()->getPath();
+        
+        //TODO VERIFICAR EL METODO Y PATH QUE SE ESTA SOLICITANDO PARA VERIFICAR SI EL USUARIO TIENE PERMISOS
+
+        if (Usuario::verificarRolUsuario($nombreUsuario,"Socio")){
             $response = $handler->handle($request);
         }
         else{
             $response = new Response();
-            $response->getBody()->write(json_encode(array("error" => "No se ha ingresado un usuario")));
+            $response->getBody()->write(json_encode(array("error" => "El usuario no es un socio")));
             return $response;
         }
 
@@ -23,4 +28,4 @@ class usuarioMiddleware
         return $response;
     }
 } 
-?>
+
