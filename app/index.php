@@ -43,24 +43,25 @@ $app->addBodyParsingMiddleware();
 $app->group('/usuarios', function (RouteCollectorProxy $group) {
     $group->get('[/]', \UsuarioController::class . ':TraerTodos');
     $group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-    $group->post('[/alta]', \UsuarioController::class . ':CargarUno');
+    $group->post('/alta', \UsuarioController::class . ':CargarUno');
   });
 
 $app->group('/productos', function (RouteCollectorProxy $group) {
   $group->get('/{id}', \ProductoController::class . ':TraerUno');
   $group->get('[/]', \ProductoController::class . ':TraerTodos')->add(new usuarioMiddleware());
-  $group->post('[/alta]', \ProductoController::class . ':CargarUno');
+  $group->post('/alta', \ProductoController::class . ':CargarUno');
   });
 
 $app->group('/mesa', function (RouteCollectorProxy $group) {
   $group->get('[/]', \MesaController::class . ':TraerTodos'); 
-  $group->post('[/alta]', \MesaController::class . ':CargarUno'); 
+  $group->post('/alta', \MesaController::class . ':CargarUno'); 
 
 });
 
 $app->group('/pedido', function (RouteCollectorProxy $group) {
-  $group->get('[/]', \PedidoController::class . ':TraerTodos'); 
-  $group->post('[/alta]', \PedidoController::class . ':CargarUno'); 
+  $group->get('[/]', \PedidoController::class . ':TraerTodos')->add(new usuarioMiddleware()); 
+  $group->post('/alta', \PedidoController::class . ':CargarUno')->add(new usuarioMiddleware()); 
+  $group->post('/modificacion', \PedidoController::class . ':ModificarUno')->add(new usuarioMiddleware());
 
 });
 

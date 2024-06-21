@@ -8,26 +8,26 @@ class PedidoController extends Pedido implements IApiUsable
     public function CargarUno($request, $response, $args)
     {
         $parametros = $request->getParsedBody();
-        $idMesa = $parametros['idMesa'];
-        $idProducto = $parametros['idProducto'];
-        $idMozo = $parametros['idMozo'];
-        $codigo = $parametros['codigo'];
+        $idMozo = $parametros['mozo'];
+        $idProducto = $parametros['producto'];
+        $idMesa = $parametros['mesa'];
         $tiempo = $parametros['tiempo'];
+        $codigo = $parametros['codigo'];
         $cantidad = $parametros['cantidad'];
-
+        
         // Creamos el pedido
         
         $pedido = new Pedido();
-        $pedido->idMesa = $parametros['idMesa'];
-        $pedido->idProducto = $parametros['idProducto'];
-        $pedido->idMozo = $parametros['idMozo'];
-        $pedido->codigo = $parametros['codigo'];
-        $pedido->tiempo = $parametros['tiempo'];
-        $pedido->cantidad = $parametros['cantidad'];
+        // $pedido->idMesa = $parametros['mesa'];
+        // $pedido->idProducto = $parametros['producto'];
+        // $pedido->idMozo = $parametros['mozo'];
+        // $pedido->codigo = $parametros['codigo'];
+        // $pedido->tiempo = $parametros['tiempo'];
+        // $pedido->cantidad = $parametros['cantidad'];
 
-        $pedido->cargarPedido($idMesa, $idProducto, $idMozo,$codigo, $tiempo, $cantidad);
+        $nroPedido = $pedido->cargarPedido($idMozo, $idMesa, $idProducto,$codigo, $tiempo, $cantidad, 1);
 
-        $payload = json_encode(array("mensaje" => "Pedido creado con exito"));
+        $payload = json_encode(array("mensaje" => "Pedido creado con exito, el numero del pedido es $nroPedido"));
 
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');
@@ -57,11 +57,12 @@ class PedidoController extends Pedido implements IApiUsable
     public function ModificarUno($request, $response, $args)
     {
         $parametros = $request->getParsedBody();
+        $idPedido = $parametros['codigo'];
+        $modificacionEstado = $parametros['estado'];
 
-        $nombre = $parametros['nombre'];
-        // Producto::modificarProducto($nombre);
+        Pedido::modificarPedido($idPedido, $modificacionEstado);
 
-        $payload = json_encode(array("mensaje" => "Producto modificado con exito"));
+        $payload = json_encode(array("mensaje" => "Producto modificado con exito, el pedido se encuentra '$modificacionEstado'"));
 
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');

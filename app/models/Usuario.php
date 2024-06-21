@@ -59,6 +59,20 @@ class Usuario
         $consulta->execute();
     }
 
+    /**
+     * Funcion que busca el rol del usuario en la base de datos
+     * @param string $usuario el nombre del usuario a buscar
+     * 
+     * @return string el id del rol del usuario
+     */
+    public static function obtenerRolPorUsuario($usuario)
+    {
+        $usuarioObj = Usuario::obtenerUsuario($usuario);
+        $tipoUsuario = Usuario::obtenerRolUsuario($usuarioObj->tipo);
+
+        return $tipoUsuario;
+    }
+//! descontinuada -> se reemplaza por la funcion obtenerRolPorUsuario -> se dejara por si se necesita en un futuro caso contrario eliminamos
     public static function verificarRolUsuario($usuario, $rolUsuario)
     {
         $datosUsuario = Usuario::obtenerUsuario($usuario);
@@ -84,12 +98,38 @@ class Usuario
             }
         }
         return false;
-
-        
     }
 
+    /**
+     * Funcion que busca el rol del usuario en la base de datos
+     * @param int $rol el id del rol a buscar
+     * 
+     * @return string el nombre del rol del usuario
+     */
+    private static function obtenerRolUsuario($rol)
+    {
+        $objAccesoDato = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDato->prepararConsulta("SELECT nombre FROM tipo_usuario WHERE id = :id");
+        $consulta->bindValue(':id', $rol, PDO::PARAM_INT);
+        if($consulta->execute())
+        {
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+            return $resultado['nombre'];
+        }
+        else
+        {
+            throw new Exception('Error al buscar el rol del usuario');
 
-    //TODO IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA LOGEARSE
+        }
+    }
+
+        
+
+
+    //? IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA LOGEARSE
+    
+
+    //TODO IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA VER EL ESTADO DE UN PEDIDO
 
 
 }

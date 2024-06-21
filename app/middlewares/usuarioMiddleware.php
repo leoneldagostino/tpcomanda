@@ -11,21 +11,53 @@ class usuarioMiddleware
     {
         $params = $request->getQueryParams();
         $nombreUsuario = $params['usuario'];
-        $metodo = $request->getUri()->getPath();
-        
-        //TODO VERIFICAR EL METODO Y PATH QUE SE ESTA SOLICITANDO PARA VERIFICAR SI EL USUARIO TIENE PERMISOS
+        $ruta = $request->getUri()->getPath();
+        $rolUsuario = Usuario::obtenerRolPorUsuario($nombreUsuario);
 
-        if (Usuario::verificarRolUsuario($nombreUsuario,"Socio")){
-            $response = $handler->handle($request);
+        if($ruta == "/pedido/modificacion" && $request->getMethod() == "POST")
+        {
+            if($rolUsuario == "Cocinero" || $rolUsuario == "Bartender" || $rolUsuario == "Cervecero" || $rolUsuario == "Mozo")
+            {
+                $response = $handler->handle($request);
+            }
+            else
+            {
+                $response = new Response();
+                $response->getBody()->write(json_encode(array("error" => "El usuario no tiene permiso")));
+                return $response->withHeader('Content-Type', 'application/json');
+            }
         }
-        else{
-            $response = new Response();
-            $response->getBody()->write(json_encode(array("error" => "El usuario no es un socio")));
-            return $response;
+        elseif ($ruta == '/pedido/alta' && $request->getMethod() == 'POST')
+        {
+            if($rolUsuario == "Mozo")
+            {
+                $response = $handler->handle($request);
+            }
+            else
+            {
+                $response = new Response();
+                $response->getBody()->write(json_encode(array("error" => "El usuario no tiene permiso")));
+                return $response->withHeader('Content-Type', 'application/json');
+            }
         }
-
-
+        elseif($ruta == '/pedido/' && $request->getMethod() == 'GET')
+        {
+            if($rolUsuario == "Cocinero" || $rolUsuario == "Bartender" || $rolUsuario == "Cervecero" || $rolUsuario == "Mozo" || $rolUsuario == "Socio")
+            {
+                $response = $handler->handle($request);
+            }
+            else
+            {
+                $response = new Response();
+                $response->getBody()->write(json_encode(array("error" => "El usuario no tiene permiso")));
+                return $response->withHeader('Content-Type', 'application/json');
+            }
+        }
         return $response;
+        
+        //TODO PROFUNDIZAR EL PATH QUE SE ESTA SOLICITANDO PARA VERIFICAR SI EL USUARIO TIENE PERMISOS
+
+
     }
 } 
 

@@ -2,24 +2,19 @@
 
 class Pedido 
 {
-    public $idMesa;
-    public $idProducto;
-    public $idMozo;
-    public $codigo;
-    public $tiempo;
-    public $cantidad;
 
-    public function cargarPedido($idMesa,$idProducto,$idMozo,$codigo,$tiempo,$cantidad)
+    public function cargarPedido($idMozo,$idMesa,$idProducto,$codigo,$tiempo,$cantidad,$estado)
     {
+        
         $accederDatos = AccesoDatos::obtenerInstancia();
-        $sentencia = $accederDatos->prepararConsulta("INSERT INTO pedido (id_mesa, id_prod, id_mozo, codigo, tiempo, cantidad) VALUES (:idMesa, :idProducto, :idMozo, :codigo, :tiempo, :cantidad)");
+        $sentencia = $accederDatos->prepararConsulta("INSERT INTO pedido (id_mozo, id_mesa, id_producto,tiempo ,codigo,cantidad ,estado) VALUES (:idMozo, :idMesa, :idProducto, :tiempo,:codigo, :cantidad, :estado)");
+        $sentencia->bindValue(':idMozo', $idMozo,PDO::PARAM_INT);
         $sentencia->bindValue(':idMesa', $idMesa, PDO::PARAM_INT);
         $sentencia->bindValue(':idProducto', $idProducto, PDO::PARAM_INT);
-        $sentencia->bindValue(':idMozo', $idMozo,PDO::PARAM_INT);
-        $sentencia->bindValue(':codigo', $codigo, PDO::PARAM_INT);
         $sentencia->bindValue(':tiempo', $tiempo, PDO::PARAM_INT);
+        $sentencia->bindValue(':codigo', $codigo, PDO::PARAM_INT);
         $sentencia->bindValue(':cantidad', $cantidad, PDO::PARAM_INT);
-
+        $sentencia->bindValue(':estado', $estado , PDO::PARAM_INT);
         $sentencia->execute();
 
         return $accederDatos->obtenerUltimoId();
@@ -35,10 +30,10 @@ class Pedido
         return $sentencia->fetchAll(PDO::FETCH_CLASS,'Pedido');
     }
 
-    public function modificarPedido($idPedido, $estado)
+    public static function modificarPedido($idPedido, $estado)
     {
-        $idEstado = $this->verificarEstado($estado);
-        if(!$this->verificarPedidoPorId($idPedido) && $idEstado != 0){
+        $idEstado = Pedido::verificarEstado($estado);
+        if(!Pedido::verificarPedidoPorId($idPedido) && $idEstado != 0){
             return 0;
         }
         else{
@@ -52,7 +47,7 @@ class Pedido
         }
     }
 
-    private function verificarPedidoPorId($id)
+    private static function verificarPedidoPorId($id)
     {
         $accederDatos = AccesoDatos::obtenerInstancia();
         $sentencia = $accederDatos->prepararConsulta("SELECT * FROM pedido WHERE id = :id");
@@ -67,10 +62,12 @@ class Pedido
         
     }
 
-    private function verificarEstado($estado)
+    //
+
+    private static function verificarEstado($estado)
     {
         $accederDatos = AccesoDatos::obtenerInstancia();
-        $sentencia = $accederDatos->prepararConsulta("SELECT id FROM mesa_estado WHERE nombre = :estado");
+        $sentencia = $accederDatos->prepararConsulta("SELECT id FROM pedido_estado WHERE nombre = :estado");
         $sentencia->bindValue(':estado',$estado,PDO::PARAM_STR);
         $sentencia->execute();
 
@@ -85,6 +82,10 @@ class Pedido
 
     }
 
+
+    //TODO funcion que traiga pedido para un sector especifico
+    // Traer de la base de datos los pendientes y vincularlos mediante consulta a la tabla producto su id y obtener su sector o tipo de producto
+
     //TODO funcion que verifique el tiempo de preparacion de un producto, y calcular en cuanto tiempo falta para que este listo
 
     /*
@@ -93,10 +94,7 @@ class Pedido
     se debera tomar el valor de modificacion y sumarle el tiempo de preparacion, y comparar con la fecha al momento de consultar
     */
 
-    //TODO IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA CAMBIAR EL ESTADO DEL PEDIDO
-    
     //TODO IMPLEMENTAR LA FUNCION PARA QUE EL USUARIO PUEDA VER EL ESTADO DE UN PEDIDO
-
-    
+    // ? Ya esta implementada pero puede profundizarse mas para el cliente
 
 }

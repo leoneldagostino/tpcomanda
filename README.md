@@ -1,13 +1,20 @@
-> **⚠️ Atención** Esta opción dejó de ser gratuita debido a cambios en la plataforma de Heroku. [Mas info](https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq).
-
 TP Programacion III - La comanda
 ==============================
 
 ## Sprint 1
-- Dar de alta y listar usuarios(mozo, bartender...)
-- Dar de alta y listar productos(bebidas y comidas)
-- Dar de alta y listar mesas
-- Dar de alta y listar pedidos
+- Dar de alta y listar usuarios(mozo, bartender...) ✔️
+- Dar de alta y listar productos(bebidas y comidas) ✔️
+- Dar de alta y listar mesas ✔️
+- Dar de alta y listar ✔️
+
+## Sprint 2
+- Usar MW de usuarios/perfiles ✔️
+- Verificar usaurios para las tareas de  ✔️
+- Manejo del estado del pedido ✔️
+
+## 3er sprint:
+- Carga de datos desde un archivo .CSV 
+- Descarga de archivos .CSV 
 
 ## Comentarios De La entrega
 
