@@ -1,798 +1,302 @@
 {
-    "mensaje": "Producto creado con exito"
-}
-{
-    "listaProducto": [
-        {
-            "nombre": "vino blanco",
-            "precio": 860,
-            "tipo": "bebida",
-            "id": 1
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 30,
-            "tipo": "bebida",
-            "id": 2
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 748,
-            "tipo": "bebida",
-            "id": 3
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 742,
-            "tipo": "comida",
-            "id": 4
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 296,
-            "tipo": "comida",
-            "id": 5
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 69,
-            "tipo": "bebida",
-            "id": 6
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 167,
-            "tipo": "bebida",
-            "id": 7
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 256,
-            "tipo": "bebida",
-            "id": 8
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 126,
-            "tipo": "bebida",
-            "id": 9
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 779,
-            "tipo": "bebida",
-            "id": 10
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 151,
-            "tipo": "comida",
-            "id": 11
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 256,
-            "tipo": "bebida",
-            "id": 12
-        },
-        {
-            "nombre": "fideos",
-            "precio": 947,
-            "tipo": "comida",
-            "id": 13
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 964,
-            "tipo": "bebida",
-            "id": 14
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 862,
-            "tipo": "bebida",
-            "id": 15
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 233,
-            "tipo": "comida",
-            "id": 16
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 547,
-            "tipo": "comida",
-            "id": 17
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 950,
-            "tipo": "bebida",
-            "id": 18
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 470,
-            "tipo": "comida",
-            "id": 19
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 489,
-            "tipo": "bebida",
-            "id": 20
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 290,
-            "tipo": "bebida",
-            "id": 21
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 22,
-            "tipo": "bebida",
-            "id": 22
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 813,
-            "tipo": "bebida",
-            "id": 23
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 454,
-            "tipo": "bebida",
-            "id": 24
-        },
-        {
-            "nombre": "fideos",
-            "precio": 398,
-            "tipo": "comida",
-            "id": 25
-        },
-        {
-            "nombre": "fideos",
-            "precio": 266,
-            "tipo": "comida",
-            "id": 26
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 383,
-            "tipo": "comida",
-            "id": 27
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 137,
-            "tipo": "bebida",
-            "id": 28
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 999,
-            "tipo": "bebida",
-            "id": 29
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 29,
-            "tipo": "bebida",
-            "id": 30
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 136,
-            "tipo": "comida",
-            "id": 31
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 358,
-            "tipo": "bebida",
-            "id": 32
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 855,
-            "tipo": "bebida",
-            "id": 33
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 329,
-            "tipo": "bebida",
-            "id": 34
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 901,
-            "tipo": "bebida",
-            "id": 35
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 936,
-            "tipo": "comida",
-            "id": 36
-        },
-        {
-            "nombre": "fideos",
-            "precio": 26,
-            "tipo": "comida",
-            "id": 37
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 601,
-            "tipo": "bebida",
-            "id": 38
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 163,
-            "tipo": "bebida",
-            "id": 39
-        },
-        {
-            "nombre": "fideos",
-            "precio": 740,
-            "tipo": "comida",
-            "id": 40
-        },
-        {
-            "nombre": "fideos",
-            "precio": 336,
-            "tipo": "comida",
-            "id": 41
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 908,
-            "tipo": "bebida",
-            "id": 42
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 572,
-            "tipo": "comida",
-            "id": 43
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 966,
-            "tipo": "bebida",
-            "id": 44
-        },
-        {
-            "nombre": "fideos",
-            "precio": 372,
-            "tipo": "comida",
-            "id": 45
-        },
-        {
-            "nombre": "fideos",
-            "precio": 447,
-            "tipo": "comida",
-            "id": 46
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 759,
-            "tipo": "bebida",
-            "id": 47
-        },
-        {
-            "nombre": "fideos",
-            "precio": 314,
-            "tipo": "comida",
-            "id": 48
-        },
-        {
-            "nombre": "fideos",
-            "precio": 365,
-            "tipo": "comida",
-            "id": 49
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 658,
-            "tipo": "bebida",
-            "id": 50
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 356,
-            "tipo": "bebida",
-            "id": 51
-        },
-        {
-            "nombre": "fideos",
-            "precio": 921,
-            "tipo": "comida",
-            "id": 52
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 529,
-            "tipo": "bebida",
-            "id": 53
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 521,
-            "tipo": "bebida",
-            "id": 54
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 588,
-            "tipo": "bebida",
-            "id": 55
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 369,
-            "tipo": "bebida",
-            "id": 56
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 729,
-            "tipo": "bebida",
-            "id": 57
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 648,
-            "tipo": "bebida",
-            "id": 58
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 261,
-            "tipo": "bebida",
-            "id": 59
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 367,
-            "tipo": "bebida",
-            "id": 60
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 726,
-            "tipo": "bebida",
-            "id": 61
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 236,
-            "tipo": "bebida",
-            "id": 62
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 600,
-            "tipo": "bebida",
-            "id": 63
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 293,
-            "tipo": "bebida",
-            "id": 64
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 438,
-            "tipo": "bebida",
-            "id": 65
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 378,
-            "tipo": "bebida",
-            "id": 66
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 415,
-            "tipo": "bebida",
-            "id": 67
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 869,
-            "tipo": "bebida",
-            "id": 68
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 58,
-            "tipo": "bebida",
-            "id": 69
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 77,
-            "tipo": "bebida",
-            "id": 70
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 453,
-            "tipo": "bebida",
-            "id": 71
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 870,
-            "tipo": "comida",
-            "id": 72
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 962,
-            "tipo": "bebida",
-            "id": 73
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 939,
-            "tipo": "bebida",
-            "id": 74
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 252,
-            "tipo": "bebida",
-            "id": 75
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 164,
-            "tipo": "bebida",
-            "id": 76
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 807,
-            "tipo": "comida",
-            "id": 77
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 592,
-            "tipo": "bebida",
-            "id": 78
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 397,
-            "tipo": "comida",
-            "id": 79
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 376,
-            "tipo": "bebida",
-            "id": 80
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 616,
-            "tipo": "bebida",
-            "id": 81
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 476,
-            "tipo": "bebida",
-            "id": 82
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 452,
-            "tipo": "bebida",
-            "id": 83
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 939,
-            "tipo": "bebida",
-            "id": 84
-        },
-        {
-            "nombre": "fideos",
-            "precio": 317,
-            "tipo": "comida",
-            "id": 85
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 731,
-            "tipo": "bebida",
-            "id": 86
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 635,
-            "tipo": "bebida",
-            "id": 87
-        },
-        {
-            "nombre": "fideos",
-            "precio": 472,
-            "tipo": "comida",
-            "id": 88
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 969,
-            "tipo": "bebida",
-            "id": 89
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 399,
-            "tipo": "bebida",
-            "id": 90
-        },
-        {
-            "nombre": "cerveza roja",
-            "precio": 903,
-            "tipo": "bebida",
-            "id": 91
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 559,
-            "tipo": "bebida",
-            "id": 92
-        },
-        {
-            "nombre": "vino tinto",
-            "precio": 423,
-            "tipo": "bebida",
-            "id": 93
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 821,
-            "tipo": "bebida",
-            "id": 94
-        },
-        {
-            "nombre": "cerveza negra",
-            "precio": 10,
-            "tipo": "bebida",
-            "id": 95
-        },
-        {
-            "nombre": "milenesa",
-            "precio": 111,
-            "tipo": "comida",
-            "id": 96
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 633,
-            "tipo": "bebida",
-            "id": 97
-        },
-        {
-            "nombre": "vino blanco",
-            "precio": 805,
-            "tipo": "bebida",
-            "id": 98
-        },
-        {
-            "nombre": "gaseosa",
-            "precio": 332,
-            "tipo": "bebida",
-            "id": 99
-        },
-        {
-            "nombre": "cerveza rubia",
-            "precio": 634,
-            "tipo": "bebida",
-            "id": 100
-        },
-        {
-            "nombre": "fideos con queso",
-            "precio": 1500,
-            "tipo": "comida",
-            "id": 101
-        },
-        {
-            "nombre": "fideos con queso",
-            "precio": 1500,
-            "tipo": "comida",
-            "id": 102
-        }
-    ]
-}
-{
-    "mensaje": "Usuario creado con exito"
-}
-{
-    "listaUsuario": [
-        {
-            "id": 1,
-            "usuario": "franco",
-            "clave": "1234",
-            "tipo": "Bartender"
-        },
-        {
-            "id": 2,
-            "usuario": "lorenzo",
-            "clave": "1234",
-            "tipo": "Bartender"
-        },
-        {
-            "id": 3,
-            "usuario": "leonel",
-            "clave": "1234",
-            "tipo": "Socio"
-        },
-        {
-            "id": 4,
-            "usuario": "oscar",
-            "clave": "1234",
-            "tipo": "Socio"
-        },
-        {
-            "id": 5,
-            "usuario": "luis",
-            "clave": "1234",
-            "tipo": "Cocinero"
-        },
-        {
-            "id": 6,
-            "usuario": "carlos",
-            "clave": "1234",
-            "tipo": "Cervecero"
-        },
-        {
-            "id": 7,
-            "usuario": "gianfranco",
-            "clave": "1234",
-            "tipo": "Mozo"
-        },
-        {
-            "id": 8,
-            "usuario": "juan",
-            "clave": "1234",
-            "tipo": "Socio"
-        },
-        {
-            "id": 9,
-            "usuario": "emiliano",
-            "clave": "$2y$10$DKo",
-            "tipo": "Cocinero"
-        },
-        {
-            "id": 10,
-            "usuario": "emiliano",
-            "clave": "$2y$10$o56",
-            "tipo": "Cocinero"
-        }
-    ]
-}
-{
-    "mensaje": "Producto creado con exito"
-}
-{
-    "listaMesa": [
-        {
-            "codigo": 21232,
-            "estado": "cerrada",
-            "id": 1
-        },
-        {
-            "codigo": 31234,
-            "estado": "cerrada",
-            "id": 2
-        },
-        {
-            "codigo": 55431,
-            "estado": "cerrada",
-            "id": 3
-        },
-        {
-            "codigo": 23415,
-            "estado": "cerrada",
-            "id": 4
-        },
-        {
-            "codigo": 98123,
-            "estado": "cerrada",
-            "id": 5
-        },
-        {
-            "codigo": 98123,
-            "estado": "cerrada",
-            "id": 6
-        },
-        {
-            "codigo": 98123,
-            "estado": "cerrada",
-            "id": 7
-        }
-    ]
-}
-{
-    "listaPedidos": [
-        {
-            "idMesa": null,
-            "idProducto": null,
-            "idMozo": null,
-            "codigo": 48,
-            "tiempo": 419,
-            "cantidad": 456,
-            "id_mozo": 490,
-            "id_prod": 980,
-            "id_mesa": 37
-        },
-        {
-            "idMesa": null,
-            "idProducto": null,
-            "idMozo": null,
-            "codigo": 80,
-            "tiempo": 852,
-            "cantidad": 868,
-            "id_mozo": 317,
-            "id_prod": 154,
-            "id_mesa": 69
-        },
-        {
-            "idMesa": null,
-            "idProducto": null,
-            "idMozo": null,
-            "codigo": 81,
-            "tiempo": 582,
-            "cantidad": 431,
-            "id_mozo": 621,
-            "id_prod": 861,
-            "id_mesa": 62
-        },
-        {
-            "idMesa": null,
-            "idProducto": null,
-            "idMozo": null,
-            "codigo": 83,
-            "tiempo": 687,
-            "cantidad": 387,
-            "id_mozo": 624,
-            "id_prod": 513,
-            "id_mesa": 88
-        },
-        {
-            "idMesa": null,
-            "idProducto": null,
-            "idMozo": null,
-            "codigo": 85,
-            "tiempo": 858,
-            "cantidad": 773,
-            "id_mozo": 512,
-            "id_prod": 279,
-            "id_mesa": 51
-        },
-        {
-            "idMesa": null,
-            "idProducto": null,
-            "idMozo": null,
-            "codigo": 12345,
-            "tiempo": 5,
-            "cantidad": 3,
-            "id_mozo": 2,
-            "id_prod": 23,
-            "id_mesa": 2
-        }
-    ]
+	"info": {
+		"_postman_id": "46d221c1-9f31-4735-b772-db9bad1215e2",
+		"name": "TP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27501751"
+	},
+	"item": [
+		{
+			"name": "Sprint1",
+			"item": [
+				{
+					"name": "Alta producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "fideos con queso",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "comida",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/productos/alta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos",
+								"alta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/productos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alta Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "emiliano",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "Cocinero",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/usuarios/alta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"alta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/usuarios/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alta Mesa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "estado",
+									"value": "cerrada",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "98123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/mesa/alta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesa",
+								"alta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Mesas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/mesa/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alta Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "estado",
+									"value": "cerrada",
+									"type": "text"
+								},
+								{
+									"key": "codigo",
+									"value": "98123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/pedido/alta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedido",
+								"alta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/pedido/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedido",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sprint2",
+			"item": [
+				{
+					"name": "Prueba MW usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "en preparacion",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/pedido/modificacion?usuario=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedido",
+								"modificacion"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MW modifacion pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
 }
