@@ -25,6 +25,8 @@ require_once './controllers/UsuarioController.php';
 require_once './controllers/ProductoController.php';
 require_once './controllers/MesaController.php';
 require_once './controllers/PedidoController.php';
+require_once './controllers/GuardarController.php';
+require_once './controllers/CargarController.php';
 
 // Load ENV
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -48,7 +50,7 @@ $app->group('/usuarios', function (RouteCollectorProxy $group) {
 
 $app->group('/productos', function (RouteCollectorProxy $group) {
   $group->get('/{id}', \ProductoController::class . ':TraerUno');
-  $group->get('[/]', \ProductoController::class . ':TraerTodos')->add(new usuarioMiddleware());
+  $group->get('[/]', \ProductoController::class . ':TraerTodos');
   $group->post('/alta', \ProductoController::class . ':CargarUno');
   });
 
@@ -63,6 +65,20 @@ $app->group('/pedido', function (RouteCollectorProxy $group) {
   $group->post('/alta', \PedidoController::class . ':CargarUno')->add(new usuarioMiddleware()); 
   $group->post('/modificacion', \PedidoController::class . ':ModificarUno')->add(new usuarioMiddleware());
 
+});
+
+$app->group('/guardar', function (RouteCollectorProxy $group){
+  $group->post('/usuarios', \GuardarController::class . ':GuardarUsuarios');
+  $group->post('/mesas', \GuardarController::class . ':GuardarMesas');
+  $group->post('/pedidos', \GuardarController::class . ':GuardarPedidos');
+  $group->post('/productos', \GuardarController::class . ':GuardarProductos');
+});
+
+$app->group('/cargar', function (RouteCollectorProxy $group){
+  $group->post('/usuarios', \CargarController::class . ':cargarUsuarios');
+  $group->post('/mesas', \CargarController::class . ':cargarMesa');
+  $group->post('/pedidos', \CargarController::class . ':cargarPedidos');
+  $group->post('/productos', \CargarController::class . ':cargarProductos');
 });
 
 $app->get('[/]', function (Request $request, Response $response) {    

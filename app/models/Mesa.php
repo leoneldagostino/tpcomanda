@@ -7,11 +7,11 @@ class Mesa
 
     public $estado;
 
-    public function cargarMesa($codigo, $estado)
+    public static function cargarMesa($codigo, $estado)
     {        
         $accederDatos = AccesoDatos::obtenerInstancia();
         $sentencia = $accederDatos->prepararConsulta("INSERT INTO mesa (estado, codigo) VALUES (:estado, :codigo)");
-        $sentencia->bindValue(':estado', $estado, PDO::PARAM_STR);
+        $sentencia->bindValue(':estado', $estado, PDO::PARAM_INT);
         $sentencia->bindValue(':codigo', $codigo, PDO::PARAM_INT);
 
         $sentencia->execute();
@@ -25,7 +25,7 @@ class Mesa
         $sentencia = $accederDatos->prepararConsulta('SELECT * FROM mesa');
         $sentencia->execute();
 
-        return $sentencia->fetchAll(PDO::FETCH_CLASS,'Mesa');
+        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

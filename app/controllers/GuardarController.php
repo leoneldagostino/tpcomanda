@@ -60,6 +60,7 @@ class GuardarController
     public function GuardarPedidos($request,$response)
     {
         try{
+            $rutaArchivo = "./csv/pedidos.csv";
             $pedidosDatos = Pedido::mostrarPedidos();
             $archivo = fopen("./csv/pedidos.csv", "w");
 
@@ -71,13 +72,14 @@ class GuardarController
                 $fila = get_object_vars($pedido);
                 fputcsv($archivo, $fila);
             }
+            fclose($archivo);
 
-            $response->getBody()->write(json_encode(array("mensaje" => "Pedidos guardados en csv")));
+            $response = $response->withHeader('Content-Type', 'text/csv');
+            $response = $response->withHeader('Content-Disposition', 'attachment; filename=pedidos.csv');
+            $response->getBody()->write(file_get_contents($rutaArchivo));
 
         }catch(Exception $e){
             $response->getBody()->write(json_encode(array("error" => $e->getMessage())));
-        }finally{
-            fclose($archivo);
         }
         return $response;
     }

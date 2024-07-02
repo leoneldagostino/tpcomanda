@@ -4,16 +4,16 @@ class Producto {
 
     public $id;
     public $nombre;
+    public $responsable;
     public $precio;
-    public $tipo;
 
-    public static function cargarProducto($nombre, $precio, $tipo)
+    public static function cargarProducto($nombre, $responsable, $precio)
     {
         $accederDatos = AccesoDatos::obtenerInstancia();
-        $sentencia = $accederDatos->prepararConsulta("INSERT INTO producto (nombre, precio, tipo) VALUES (:nombre, :precio, :tipo)");
+        $sentencia = $accederDatos->prepararConsulta("INSERT INTO producto (nombre, responsable, precio) VALUES (:nombre, :responsable, :precio)");
         $sentencia->bindValue(':nombre', $nombre, PDO::PARAM_STR);
+        $sentencia->bindValue(':responsable', $responsable, PDO::PARAM_INT);
         $sentencia->bindValue(':precio', $precio, PDO::PARAM_INT);
-        $sentencia->bindValue(':tipo', $tipo, PDO::PARAM_STR);
 
         $sentencia->execute();
 
@@ -55,10 +55,10 @@ class Producto {
         else{
 
             $accederDatos = AccesoDatos::obtenerInstancia();
-            $sentencia = $accederDatos->prepararConsulta("UPDATE producto SET nombre = :nombre, precio = :precio, tipo = :tipo WHERE id = :id");
+            $sentencia = $accederDatos->prepararConsulta("UPDATE producto SET nombre = :nombre, precio = :precio, responsable = :responsable WHERE id = :id");
             $sentencia->bindValue(':nombre', $this->nombre, PDO::PARAM_STR);
             $sentencia->bindValue(':precio', $this->precio, PDO::PARAM_INT);
-            $sentencia->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);
+            $sentencia->bindValue(':responsable', $this->responsable, PDO::PARAM_INT);
             $sentencia->bindValue(':id', $idProducto, PDO::PARAM_INT);
     
             return $sentencia->execute();
