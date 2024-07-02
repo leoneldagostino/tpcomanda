@@ -3,7 +3,7 @@
 class Pedido 
 {
 
-    public function cargarPedido($idMozo,$idMesa,$idProducto,$codigo,$tiempo,$cantidad,$estado)
+    public static function cargarPedido($idMozo,$idMesa,$idProducto,$codigo,$tiempo,$cantidad,$estado)
     {
         
         $accederDatos = AccesoDatos::obtenerInstancia();
@@ -21,7 +21,7 @@ class Pedido
 
     }
 
-    public function mostrarPedidos()
+    public static function mostrarPedidos()
     {
         $accederDatos = AccesoDatos::obtenerInstancia();
         $sentencia = $accederDatos->prepararConsulta('SELECT * FROM pedido');

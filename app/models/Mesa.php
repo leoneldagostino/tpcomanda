@@ -19,7 +19,7 @@ class Mesa
         return $accederDatos->obtenerUltimoId();
     }
 
-    public function mostrarMesas()
+    public static function mostrarMesas()
     {
         $accederDatos = AccesoDatos::obtenerInstancia();
         $sentencia = $accederDatos->prepararConsulta('SELECT * FROM mesa');

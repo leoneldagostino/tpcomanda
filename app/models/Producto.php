@@ -7,7 +7,7 @@ class Producto {
     public $precio;
     public $tipo;
 
-    public function cargarProducto($nombre, $precio, $tipo)
+    public static function cargarProducto($nombre, $precio, $tipo)
     {
         $accederDatos = AccesoDatos::obtenerInstancia();
         $sentencia = $accederDatos->prepararConsulta("INSERT INTO producto (nombre, precio, tipo) VALUES (:nombre, :precio, :tipo)");
@@ -20,7 +20,7 @@ class Producto {
         return $accederDatos->obtenerUltimoId();
     }
 
-    public function mostrarProductos()
+    public static function mostrarProductos()
     {
 
         $accederDatos = AccesoDatos::obtenerInstancia();
