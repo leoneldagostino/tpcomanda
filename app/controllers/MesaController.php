@@ -11,7 +11,7 @@ class MesaController extends Mesa implements IApiUsable
         $codigo = $parametros['codigo'];
         $estado = $parametros['estado'];
 
-        // Creamos el producto
+
         $mesa = new Mesa();
         $mesa->codigo = $codigo;
         $mesa->estado = $estado;
@@ -23,16 +23,6 @@ class MesaController extends Mesa implements IApiUsable
         return $response->withHeader('Content-Type', 'application/json');
     }
 
-    public function TraerUno($request, $response, $args)
-    {
-        // Buscamos producto por id
-        // $id = $args['id'];
-        // // $producto = Producto::obtenerProducto($id);
-        // // $payload = json_encode($producto);
-
-        // $response->getBody()->write($payload);
-        // return $response->withHeader('Content-Type', 'application/json');
-    }
 
     public function TraerTodos($request, $response, $args)
     {
@@ -49,22 +39,31 @@ class MesaController extends Mesa implements IApiUsable
         $parametros = $request->getParsedBody();
 
         $nombre = $parametros['nombre'];
-        // Producto::modificarProducto($nombre);
+
 
         $payload = json_encode(array("mensaje" => "Producto modificado con exito"));
 
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');
     }
-    
-    public function BorrarUno($request, $response, $args)
-    {
-        $id = $args['id'];
-        // Producto::borrarProducto($id);
 
-        $payload = json_encode(array("mensaje" => "Producto eliminado con exito"));
-
-        $response->getBody()->write($payload);
-        return $response->withHeader('Content-Type', 'application/json');
+    public function Actualizar($request, $response, $args){
+        $parametro= $request->getParsedBody();
+        
+        if(Mesa::ActualizarMesa($parametro['idMesa'])){
+            $response->getBody()->write("Se actualizo el pedido");
+        }else $response->getBody()->write("Algun pedido esta sin hacer ");
+        return $response;
     }
+    public function CerraMesa($request, $response, $args){
+        $parametro= $request->getParsedBody();
+        
+        if(Mesa::CerrarMesa($parametro['idMesa'])){
+            $response->getBody()->write("Se Cerro la mesa");
+        }
+
+        return $response;
+    }
+    
+
 }
